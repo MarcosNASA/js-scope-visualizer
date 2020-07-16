@@ -1,0 +1,24 @@
+{
+  "name": "js-scope-visualizer",
+  "version": "1.0.0",
+  "description": "Utility for extracting information from EScopes to generate scope visualization tools.",
+  "main": "js-scope-visualizer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosNASA/js-scope-visualizer.git"
+  },
+  "keywords": [
+    "js",
+    "scope",
+    "visualizer"
+  ],
+  "author": "Marcos NASA G",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcosNASA/js-scope-visualizer/issues"
+  },
+  "homepage": "https://github.com/MarcosNASA/js-scope-visualizer#readme"
+}
