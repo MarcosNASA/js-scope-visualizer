@@ -1,6 +1,13 @@
-var code = `"use strict";
+var esprima = require('esprima');
+var escope = require('escope');
 
-for (let i = 0; i < 10; i++) {
+var code = `eval('var a = 2');
+
+with({ a: 2, b: 3 }) {
+	console.log(a + b);
+}
+
+for (var i = 0; i < 10; i++) {
 	console.log(i);
 }
 
@@ -57,4 +64,16 @@ if (count == 3) {
 }
 
 console.log(count);`;
+
+var [codeLines, codeTokens] = processLinesAndTokens(code);
+
+var ast = esprima.parseScript(code, {
+    range: true,
+    loc: true,
+    tokens: true,
+});
+
+var scopes = escope.analyze(ast);
+
+extractBubbles(scopes, codeLines, codeTokens);
 
